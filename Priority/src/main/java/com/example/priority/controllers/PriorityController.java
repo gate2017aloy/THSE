@@ -1,5 +1,6 @@
 package com.example.priority.controllers;
 
+import com.example.priority.documents.UsersResponse;
 import com.example.priority.models.Priority;
 import com.example.priority.service.PriorityService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,25 +25,20 @@ public class PriorityController {
         return "Hello World";
     }
 
-//    @GetMapping("/getPriorities")
-//    public List<String> getPriorities() {
-//        List<String> res = new ArrayList<>();
-//        res.add("Connection");
-//        res.add("Relationships");
-//        res.add("Career");
-//        res.add("Wealth");
-//        return res;
-//    }
-
     @GetMapping("/getPriorities")
     public List<Priority> getPriorities() {
         return priorityService.getAllPriorities();
     }
 
     @PostMapping("/setPrioritiesForUser/{id}")
-    public long setPriorities(@PathVariable long id) {
-
-        return id;
+    public long setPrioritiesForUser(@PathVariable long id, @RequestBody UsersResponse response) {
+        return priorityService.setPrioritiesForUser(id, response);
     }
+
+    @GetMapping("/getPrioritiesForUser/{id}")
+    public Optional<UsersResponse> getPrioritiesForUser(@PathVariable long id) {
+        return priorityService.getPrioritiesForUser(id);
+    }
+
 
 }

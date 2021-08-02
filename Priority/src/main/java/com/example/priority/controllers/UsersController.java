@@ -22,7 +22,6 @@ public class UsersController {
 
     @GetMapping(path = "/{id}")
     public Optional<User> getUserById(@PathVariable long id){
-        LOG.info("Getting task with ID {}.", id);
         Optional<User> user = this.usersService.getUserById(id);
         return user;
     }

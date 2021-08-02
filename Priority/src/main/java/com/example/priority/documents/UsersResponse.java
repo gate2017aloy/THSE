@@ -10,10 +10,6 @@ import java.util.List;
 @Document(collection = "TaskManager")
 public class UsersResponse {
     @Id
-    private String id;
-    private String task;
-    private String description;
-    private String dueDate;
-    private String label;
-    private String status;
+    private long id;
+    private List<Response> response;
 }
