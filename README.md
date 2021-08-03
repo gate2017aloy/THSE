@@ -16,6 +16,7 @@ priority (
 Initially table contanins [('Connection'),('Relationships'),('Career'),('Wealth')]. More priorities be added by an user having admin privileges
 
 # Document Database Schema
+
 response collection
   {
     "id": 1, // is unique for an user and must be present in sql user table
@@ -29,8 +30,7 @@ response collection
 //The order of insertion defines the priority, whith lower index entry having higher priority
 // Each entry has a satisfaction field having value between 1-5
 
-#API End points
-
+# API Endpoints
 
 Users get all -> http://localhost:9999/v1/api/users/
 
@@ -50,7 +50,7 @@ Set prirority for an user -> http://localhost:9999/v1/api/priority/setPriorities
 get priority response of an user -> http://localhost:9999/v1/api/priority/getPrioritiesForUser/id (id is unique to an user and must be present in the user table)
 
 
-#Technologies Used
+# Technologies Used
 
 SQL -> H2 inmemory db, can be replaced by any traditional db
 
